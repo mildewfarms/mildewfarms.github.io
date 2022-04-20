@@ -1,0 +1,2 @@
+zoom/zoom_pagetext.zdat filter=lfs diff=lfs merge=lfs -text
+source/DDJ/2007.zip filter=lfs diff=lfs merge=lfs -text
