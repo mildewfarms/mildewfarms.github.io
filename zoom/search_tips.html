@@ -1,0 +1,106 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FlyingAnt Server Example Search Page</title>
+<style type="text/css">
+
+		p {font-family: Verdana, Arial, Helvetica, sans-serif;}
+
+		h1 {
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			color: #111111;
+			font-size: 30px;
+		}
+		
+		h2 {
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			color: #111111;
+		}
+		
+		.TitleStyle {
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			font-size: 26px
+		}
+		
+		.SmPageTitle {
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			color: #CCCCCC;
+		}
+
+		.highlight { background: #FFFF40; font-family: Verdana, Arial, Helvetica, sans-serif;}
+		.searchheading { font-size: 115%; font-weight: bold; font-family: Verdana, Arial, Helvetica, sans-serif;}
+		.summary { font-size: 80%; font-style: italic; font-family: Verdana, Arial, Helvetica, sans-serif;}
+		.suggestion { font-size: 100%; font-family: Verdana, Arial, Helvetica, sans-serif;}
+		.results { font-size: 80%; font-family: Verdana, Arial, Helvetica, sans-serif;}
+		.category { color: #999999; font-family: Verdana, Arial, Helvetica, sans-serif;}
+		.sorting { text-align: right; font-family: Verdana, Arial, Helvetica, sans-serif;}
+
+		.result_title { font-size: 100%; }		
+		.description { font-size: 100%; color: #008000; }
+		.context { font-size: 100%; }
+		.infoline { font-size: 80%; font-style: normal; color: #808080;}
+
+		.zoom_searchform { font-size: 100%; font-family: Verdana, Arial, Helvetica, sans-serif;}
+		.zoom_results_per_page { font-size: 80%; margin-left: 10px; }
+		.zoom_match { font-size: 80%; margin-left: 10px;}				
+		.zoom_categories { font-size: 80%; }
+		.zoom_categories ul { display: inline; margin: 0px; padding: 0px;}
+		.zoom_categories li { display: inline; margin-left: 15px; list-style-type: none; }
+		
+		input.zoom_button {  }
+		input.zoom_searchbox {  }		
+		
+		.result_image { float: left; display: block; }
+		.result_image img { margin: 10px;  border: 0px; }
+
+		.result_block { margin-top: 15px; margin-bottom: 15px; clear: left; }
+		.result_altblock { margin-top: 15px; margin-bottom: 15px; clear: left; }
+		
+		.result_pages { font-size: 100%; }
+		.result_pagescount { font-size: 100%; }
+		
+		.searchtime { font-size: 80%; }
+		
+		.recommended 
+		{ 
+			background: #DFFFBF; 
+			border-top: 1px dotted #808080; 
+			border-bottom: 1px dotted #808080; 
+			margin-top: 15px; 
+			margin-bottom: 15px; 
+		}
+		.recommended_heading { float: right; font-weight: bold; }
+		.recommend_block { margin-top: 15px; margin-bottom: 15px; clear: left; }		
+		.recommend_title { font-size: 100%; }
+		.recommend_description { font-size: 100%; color: #008000; }
+		.recommend_infoline { font-size: 80%; font-style: normal; color: #808080;}
+</style>
+</head>
+<body>
+<div style="margin-left: 2em; padding: 1em; margin-right: 5em;">
+<h1>Zoom Search Engine FAQ - Search Tips</h1>
+<p><strong>Match ANY search word (Boolean OR)</strong></p>
+<p>Search for pages which contain AT LEAST ONE of the given search   					  terms. The results will be sorted in order of the number of terms   					  matched, and the determined relevancy score. Click the "match   					  any search word" radio button to enable this search option.</p>
+<p><strong>Match ALL search word (Boolean AND)</strong></p>
+<p>Search for pages which contain ALL of the given search terms. The   					  results will be sorted in order of the number of terms matched,   					  and the determined relevancy score. Click the "match all search   					  word" radio button to enable this search option.</p>
+<p><strong>Wildcard searches</strong></p>
+<p>You can use wildcard characters '*' and '?' in your search terms   					  to search for multiple words and return larger set of results. An   					  asterisk character ('*') in a search term represents any number   					  of characters, while a question mark ('?') represents any single   					  character.</p>
+<p>This allows you to perform advanced searches such as "zoom*"   					  which would return all pages containing words beginning with "zoom".   					  Similarly, "z??m" would return all pages containing four   					  letter words beginning with 'z' and ending with 'm'. Also, "*car*"   					  would be a search for any words containing the word "car".</p>
+<p><strong>Exact phrase searches</strong></p>
+<p>An exact phrase search returns results where the phrase of words   					  are found, in the same order that they are specified. For example,   					  an exact phrase search for the words "green   					  tea" would only return results where the phrase 'green   					  tea' appears. It would <em>not</em> return pages where the words 'green'   					  and 'tea' are found separately, or in a different order such as,   					  'tea green'. </p>
+<p>To specify an exact phrase search term, you need to enclose the   					  words that form the phrase using double quotation marks. You can   					  also combine the use of exact phrase searches with normal search   					  terms and wildcard search terms within a single search query (eg.   					  "green tea" japan*).					  Note however, that wildcards within exact phrases (eg. "green   					  te*") are not supported. </p>
+<p><strong>Exclusion/negative searches</strong></p>
+<p>You can precede a search term with a hyphen character to exclude   					  that search term from being included in your search results. For   					  example, a search for "cat -dog" would return all pages   					  containing the word "cat" but not the word "dog".</p>
+<p><strong>Skip words</strong></p>
+<p>Note that some common words such as "the", "and",   					  "or" may be deemed to be skip words and ignored by the   					  search.</p>
+<p><strong>Category searches</strong></p>
+<p>You can restrict your searches to a specific category by choosing   					  a defined category from the drop-down box.</p>
+<p><strong>Search Speeds</strong></p>
+<p>On some systems with slow DVD drives certain searches may be extremely slow, 
+particularly exact phrase searches and searches containing wildcards. If you 
+require faster search speeds you can copy the entire contents of this DVD to 
+your hard disk and run the searches from there.</p>
+<p><a href="search.cgi">Back to Search Page </a></p>
+</div>
+</body>
+</html>

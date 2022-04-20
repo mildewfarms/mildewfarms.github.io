@@ -1,0 +1,151 @@
+------------------------------------------------------------------------
+                       Manual for ar7 Version 0.2
+                                (English)
+------------------------------------------------------------------------
+
+     This is a manual for the public domain compression archiver ar7
+
+     ar7 is distributed as a free program released to the public domain.
+     This means you may do anything you want with it, with the one exception
+     that neither you (nor I, nor anyone) may copyright it.
+
+     There is no restriction for the use within private corporations
+     or the use for governmental agencies.  Users must be respon-
+     sible for the use of facilities of the software.  The soft-
+     ware is distributed as is.  I am not liable for any damage
+     caused by the use of this software.
+
+0.  Why ar7 ?
+-------------
+
+     Unlike the output from most archivers, ar7 archives are regular
+     7-bit, ASCII files with lines 78-characters or less long.
+
+     This means they can be mailed through electronic mail services that
+     strip the eighth bit and don't like special characters such as
+     CTRL-Z, etc.
+
+     ar7 also ignores all lines before it reaches its specially coded data
+     area, so if your e-mail service attaches headers to your messages, these
+     can be simply left on the archive and will not affect anything.
+
+     You may also add lines of text (description of contents, etc.) to the
+     beginning of the file by editing it with nearly any text editor.
+     Text may also be added after the final "!$" of the ar7 data area.
+
+     You just need to be sure that you do not add any lines that begin with
+     a comma (ar7's signal).  The text on this line may be edited; it is
+     displayed on the screen whenever ar7 opens the archive.
+
+     The compaction rates of ar7 are not too astonishing, even though it uses
+     a very efficient compression routine.  The archives generally average
+     about 60-90% the size of the original files.  This is due to the
+     restriction of it using editable, e-mailable ASCII files.
+     So I doubt it will be used much except for 7-bit e-mail systems.
+
+1.  Usage
+---------
+
+  A.  General Format:
+  ==================
+
+    ar7 <command> ARC [FILENAME]...
+
+    <command>: if one is not used, you get the help screen.
+
+
+    ARC:       archive name (must include the extension: .AR7 recommended).
+    FILENAME:  File name or full pathname if specified (wildcards ok).
+
+
+  B.  <command>
+  =============
+
+   a (Add) compress and add to an archive.
+
+     Compress and Add files specified to an archive.  If the named
+     archive does not exist, then create one with the name.  ar7
+     overwrites any file in the archive by the given file name with
+     'a' command.
+
+     < Example 1 >  ar7 a MINE.AR7 ar7.exe ar7.doc
+
+     ar7 makes an archive named MINE.AR7 from the files ar7.exe and
+     ar7.doc.
+
+   r (Update) Compress and Replace.
+
+     Compress and add files specified to an archive as command 'a'.
+     If ar7 detects a file with the name same as the one in the
+     archive, then ar7 replaces the one in the archive.
+
+     < Example 2 > ar7 r MINE.AR7
+
+     All the file(s) in the current directory which have names identical
+     to those of the files in MINE.AR7 are compressed and stored in the
+     archive, replacing the copies previously in the archive.
+
+
+   d (Delete)
+
+     ar7 deletes specified file(s) from the archive.
+
+     < Example 3 > ar7 d MINE.AR7 ar7.doc
+
+     ar7 deletes ar7.doc in the archive MINE.AR7 .
+
+   x (Extract)
+
+     ar7 extracts file(s) from the archive with decompressing.
+
+     <Example 4 > ar7 s MINE.AR7
+
+     Extracts all the file(s) in the archive 'MINE.AR7'.
+
+     < Example 5 > ar7 x MINE.AR7 ar7.doc ar7.exe
+
+     ar7 extracts the files ar7.doc and ar7.exe from 'MINE.AR7'
+
+
+   p (Print) Print file(s) on standard out.
+
+     ar7 prints file decompressing to standard output.
+
+     < Example 6 >  ar7 p MINE.AR7 ar7.doc
+
+     ar7 extracts 'ar7.doc' from 'MINE.AR7' and displays it on your
+     terminal.
+
+     < Example 7 > ar7 p MINE.AR7 ar7.doc > prn
+
+     ar7 extracts 'ar7.doc' from 'MINE.AR7' and prints it out from
+     your printer.
+
+
+   l (List)
+
+     ar7 lists file names in the archive on a line.
+
+     < Example 8 > ar7 l MINE.AR7
+
+     ar7 shows list of file(s) archived in 'MINE.AR7'.
+
+
+2. Contacting the author.
+-------------------------
+
+    Any comments are welcome via internet: 100015.264@compuserve.com
+
+    or by mail:
+
+         Timothy R. Erickson
+         7500 West Camp Wisdom Road
+         Dallas, TX 75236 (USA)
+
+    alternate address:
+
+         Timothy R. Erickson
+         Avinguda Prat de la Riba, 47, 2on, 1era
+         E-25008 Lleida, Catalonia, SPAIN
+
+The ANSI "C" source code is available.
